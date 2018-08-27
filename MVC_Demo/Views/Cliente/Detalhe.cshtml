@@ -1,0 +1,52 @@
+﻿@model MVC_Demo.Models.Cliente
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhe</title>
+</head>
+<body>
+    <div> 
+        <form action="Cliente/SalvarCliente" method="post">
+            <fieldset>
+                <legend>Cliente</legend>
+
+                <div>
+                    <label for="ClienteId">Id</label>
+                </div>
+                <div>
+                    <input type="text" value="@Model.ClienteId" name="ClienteId" id="ClienteId" />
+                </div>
+
+                <div>
+                    <label for="Nome">Nome</label>
+                </div>
+                <div>
+                    <input type="text" value="@Model.Nome" name="Nome" id="Nome" />
+                </div>
+
+                <div>
+                    <label for="Email">E-mail</label>
+                </div> 
+                <div>
+                    <input type="text" value="@Model.Email" name="Email" id="Email" />
+                </div>
+
+                <div>
+                    <label for="Telefone">Telefone</label>
+                </div>
+                <div>
+                    <input type="text" value="@Model.Telefone" name="Telefone" id="Telefone" />
+                </div>
+                <input type="submit" value="Enviar"/>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
