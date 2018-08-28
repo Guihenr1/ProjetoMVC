@@ -12,41 +12,18 @@
     <title>Detalhe</title>
 </head>
 <body>
-    <div> 
-        <form action="Cliente/SalvarCliente" method="post">
-            <fieldset>
-                <legend>Cliente</legend>
-
-                <div>
-                    <label for="ClienteId">Id</label>
-                </div>
-                <div>
-                    <input type="text" value="@Model.ClienteId" name="ClienteId" id="ClienteId" />
-                </div>
-
-                <div>
-                    <label for="Nome">Nome</label>
-                </div>
-                <div>
-                    <input type="text" value="@Model.Nome" name="Nome" id="Nome" />
-                </div>
-
-                <div>
-                    <label for="Email">E-mail</label>
-                </div> 
-                <div>
-                    <input type="text" value="@Model.Email" name="Email" id="Email" />
-                </div>
-
-                <div>
-                    <label for="Telefone">Telefone</label>
-                </div>
-                <div>
-                    <input type="text" value="@Model.Telefone" name="Telefone" id="Telefone" />
-                </div>
-                <input type="submit" value="Enviar"/>
-            </fieldset>
-        </form>
+    <div>
+        @using (Html.BeginForm("SalvarCliente", "Cliente"))
+        {
+            <br />
+            <p>Código   : @Html.TextBoxFor(x => x.ClienteId, new { @type = "Number" })</p>
+            <p>Nome     : @Html.TextBoxFor(x => x.Nome)</p>
+            <p>Email    : @Html.TextBoxFor(x => x.Email)</p>
+            <p>Telefone : @Html.TextBoxFor(x => x.Telefone)</p>
+            <p>
+                <input type="submit" value="Enviar" />
+            </p>
+        }
     </div>
 </body>
 </html>

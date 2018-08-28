@@ -9,6 +9,11 @@ namespace MVC_Demo.Controllers
 {
     public class ClienteController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         // GET: Cliente
         public ActionResult Detalhe()
         {
